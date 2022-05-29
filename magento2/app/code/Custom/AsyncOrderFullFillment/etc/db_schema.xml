@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+  <table name="erp_transmission_log" resource="default" engine="innodb" comment="Custom_AsyncOrderFullFillment Table">
+    <column xsi:type="int" name="id" padding="10" unsigned="true" nullable="false" identity="true" comment="ID"/>
+    <column xsi:type="int" name="order_id" padding="10" unsigned="true" nullable="false" default="0" identity="false" comment="Order ID"/>
+    <column xsi:type="int" name="code" padding="10" unsigned="true" nullable="false" default="999" identity="false" comment="ERP Resonse Code"/>
+    <column xsi:type="timestamp" name="created_at" on_update="false" nullable="false" default="CURRENT_TIMESTAMP" comment="Created At"/>
+    <constraint xsi:type="primary" referenceId="PRIMARY">
+      <column name="id"/>
+    </constraint>
+  </table>
+</schema>

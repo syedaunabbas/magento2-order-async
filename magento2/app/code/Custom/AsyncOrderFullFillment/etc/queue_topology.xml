@@ -1,0 +1,5 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/topology.xsd">
+    <exchange name="custom-order-exchange" type="topic" connection="db">
+        <binding id="CustomOrderCreate" topic="custom.order.create" destinationType="queue" destination="custom_order_create"/>
+    </exchange>
+</config>

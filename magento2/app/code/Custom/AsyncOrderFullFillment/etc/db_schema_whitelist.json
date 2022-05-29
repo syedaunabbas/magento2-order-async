@@ -1,0 +1,13 @@
+{
+    "erp_transmission_log": {
+        "column": {
+            "id": true,
+            "order_id": true,
+            "code": true,
+            "created_at": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}
