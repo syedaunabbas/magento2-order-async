@@ -142,9 +142,15 @@ ERP Order fullfillment Module core business logic persists in `magento2/app/code
    - Password: `magento2`
    - Port: `3306`
 
-   - Place and order and view the transmission logs in `erp_transmission_log` table
+   - Place an order and view the transmission logs in `erp_transmission_log` table
 
-    ![Log Table](/readme-media/transmission-log-table.jpeg "Log Table")
+   ![Log Table](/readme-media/transmission-log-table.jpeg "Log Table")
+
+   - Before hitting the `Place Order` button you can also open the `system.log` or `debug.log` file in CLI to view the queue information logging into log files. `tail -f var/log/debug.log` or `tail -f var/log/system.log` in docker container. 
+
+   ![Log Table](/readme-media/tail-log-file.jpeg "Log Table")
+
+    
 - Transmission attempts page URL (http://magento2.docker/erp_sync/items/status)
 
 - Transmission CLI command will in docker container, first you need ssh into container via `docker exec -it magento2-order-async_apache_1 bash` then run `bin/magento erp:tranmission --success=1` for sucessfull case and `bin/magento erp:tranmission --success=0` for failed case 
