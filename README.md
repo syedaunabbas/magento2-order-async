@@ -111,8 +111,6 @@ ERP Order fullfillment Module core business logic persists in `magento2/app/code
   --page-cache=redis --page-cache-redis-server=cache --page-cache-redis-port=6379 --page-cache-redis-db=1 \
   --search-engine=elasticsearch7 --elasticsearch-host=elasticsearch`
 
-   - Set IP with domain `magento2.docker` in `/etc/hosts` file via `sudo /etc/hosts`
-
    - Set Permissions 
     - `find . -type d -exec chmod 755 {} \;`
     - `find . -type f -exec chmod 644 {} \;`
@@ -126,6 +124,8 @@ ERP Order fullfillment Module core business logic persists in `magento2/app/code
    - Run this command on the root of project directory not in docker container `docker inspect magento2-order-async_apache_1` get IPAddress from Networks.
 
    ![Apache Local IP](/readme-media/apache-network-ip.jpeg "Apache Local IP")
+
+   - Set IP with domain `magento2.docker` in `/etc/hosts` file via `sudo /etc/hosts`
 
 ## Run Application
    
