@@ -61,6 +61,29 @@ ERP Order fullfillment Module core business logic persists in `magento2/app/code
   - Store Response to `erp_transmission_log` table
   - Update order status from `new/pending` to `processing`
 
+- Queue configuration files
+  - `etc/communication.xml` to configure our topic
+  - `etc/queue_publisher.xml` defines our publisher, along with the connection type and exchange for the topic.
+  - `etc/queue_topology.xml` is to configure our exchange, we are not using RabbitMQ so we set connection to `db`
+  - `etc/queue_consumer.xml` this file is responsible to process/handel the queue periodically
+
+- Configure declarative schema for ERP Transmission Log table and CRUD
+  - `etc/db_schema.xml` file defines `erp_transmission_log`
+  
+### ERP Transmission Model,ResourceModel & Collection  
+  - `Model/ERPTransmissionLog.php`
+  - `Model/ResourceModel/ERPTransmissionLog.php`
+  - `Model/ResourceModel/ERPTransmissionLog/Collection.php`
+
+### AsyncOrderFullFillment Helper
+  - `Helper/AsyncOrderFullFillment.php` contains the helper functions like
+    - Update order status on successfull transmission
+    - Call ERP Transmit Mock Service function
+    - Get Transmission Log collection
+
+### ERP Mock Service
+  - `ERPMockAPIService.php` use to communicate external system (ERP)
+
 
 # Run Application via Docker 
 
