@@ -1,0 +1,14 @@
+<?php
+
+/**
+ * @var \Custom\AsyncOrderFullFillment\Block\Items $block
+ */
+
+$transmissionCollection = $block->showTransmissionCollection();
+
+echo "<pre>";
+foreach ($transmissionCollection as $item) {
+    print_r($item->getData());
+}
+
+echo '<h2>Aun Abbas</h2>';
